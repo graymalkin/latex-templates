@@ -1,0 +1,103 @@
+\documentclass{worksheet}
+\usepackage{amsmath, amsthm}
+\usepackage{lipsum}
+\usepackage{minted}
+
+\title{Example worksheet}
+\author{Simon Cooksey}
+\date{31 November 2022}
+
+\newmintinline{ocaml}{}
+\setminted{breaklines}
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+\maketitle
+
+This is an example worksheet with exercises denoted by big {\tt tcolorbox}s.
+
+\section{Files}
+There is a \mintinline{latex}{\filename} macro for typesetting filenames. This is useful for specifying submission structure.
+
+\begin{minted}{latex}
+Add your code to \filename{class1.ml}
+\end{minted}
+
+Add your code to \filename{class1.ml}
+
+\section{Tasks}
+\begin{minted}{latex}
+\newmintinline{ocaml}{}
+\newcommand{\theFile}{\filename{class1.ml}}
+
+\begin{task*}[Some un-numbered task]
+All tasks will be marked with a {\color{red!75!black} red} box!
+These must all be completed for full marks.
+\end{task*}
+
+\begin{task}[Numbered task]
+    \label{task:increment}
+    In \theFile, define a new function named \ocamlinline/increment/ which takes a single argument and adds 1 to it.
+    Your function must have type \ocamlinline/int -> int/.
+\end{task}
+\end{minted}
+
+\begin{task*}[Some un-numbered task]
+    \label{task:increment}
+    All tasks will be marked with a {\color{red!75!black} red} box!
+    These must all be completed for full marks.
+\end{task*}
+
+\newcommand{\theFile}{\filename{class1.ml}}
+\begin{task}[Numbered task]
+    In \theFile, define a new function named \ocamlinline/increment/ which takes a single argument and adds 1 to it.
+    Your function must have type \ocamlinline/int -> int/.
+\end{task}
+
+\section{Solutions}
+\begin{minted}{latex}
+\begin{solution*}[to Task~\ref{task:increment}]
+\mintinline{ocaml}{let increment x = x + 1}
+\end{solution*}
+\end{minted}
+
+\begin{solution*}[to Task~\ref{task:increment}]
+\mintinline{ocaml}{let increment x = x + 1}
+\end{solution*}
+
+\section{Examples}
+\begin{minted}{latex}
+\begin{example*}[Example proof using induction over the naturals]
+\begin{lemma}[$3^n - 1$ is even]
+    \label{lemma:power-of-three-even}
+    $$\forall n. \exists x. 3^n - 1 = 2x$$
+\end{lemma}
+\begin{proof}[Proof of Lemma~\ref{lemma:power-of-three-even}]
+\dots
+\end{proof}
+\end{example*}
+\end{minted}
+
+\begin{example*}[Example proof using induction over the naturals]
+\begin{lemma}[$3^n - 1$ is even]
+    \label{lemma:power-of-three-even}
+    $$\forall n. \exists x. 3^n - 1 = 2x$$
+\end{lemma}
+\begin{proof}[Proof of Lemma~\ref{lemma:power-of-three-even}]
+\dots
+\end{proof}
+\end{example*}
+
+\section{Margin notes}
+Margin notes are set up somewhat sensibly.
+
+\begin{minted}{latex}
+\marginpar{This text is nonsense, and this note isn't very helpful either.}
+\lipsum[1]
+\end{minted}
+
+\marginpar{This text is nonsense, and this note isn't very helpful either.}
+\lipsum[1]
+
+
+\end{document}
