@@ -49,39 +49,8 @@
 }
 
 \newtcolorbox{task*}[1][]{
-  freelance,
+  simon box = red!75!black,
   title=\vspace{2.5pt}{#1},
-  colback=white,
-  colbacktitle=white,
-  coltitle=black,
-  fonttitle=\large\bfseries,
-  bottomrule=0pt,
-  boxrule=0pt,
-  colframe=white,
-  overlay unbroken and first={
-  \draw[red!75!black,line width=3pt]
-    ([xshift=5pt]frame.north west) -- (frame.north west) -- (frame.south west);
-  \draw[red!75!black,line width=3pt]
-    ([xshift=-5pt]frame.north east) -- (frame.north east) -- (frame.south east);
-  },
-  overlay unbroken app={
-  \draw[red!75!black,line width=3pt,line cap=rect]
-    (frame.south west) -- ([xshift=5pt]frame.south west);
-  \draw[red!75!black,line width=3pt,line cap=rect]
-    (frame.south east) -- ([xshift=-5pt]frame.south east);
-  },
-  overlay middle and last={
-  \draw[red!75!black,line width=3pt]
-    (frame.north west) -- (frame.south west);
-  \draw[red!75!black,line width=3pt]
-    (frame.north east) -- (frame.south east);
-  },
-  overlay last app={
-  \draw[red!75!black,line width=3pt,line cap=rect]
-    (frame.south west) -- ([xshift=5pt]frame.south west);
-  \draw[red!75!black,line width=3pt,line cap=rect]
-    (frame.south east) -- ([xshift=-5pt]frame.south east);
-  },
 }
 
 \newcounter{homeworkcount}
